@@ -16,10 +16,13 @@ import { TasksComponent } from './tasks/tasks.component';
 export class AppComponent {
   @Output() select = new EventEmitter<string>();
   users = DUMMY_USERS;
-  selectedName = '';
+  selectedUserId = 'u1';
+
+  get selectedUser() {
+    return this.users.find((user) => user.id === this.selectedUserId)!;
+  }
 
   onSelectUser(id: string) {
-    const user = DUMMY_USERS.find(user => user.id === id);
-    this.selectedName = user!.name;
+    this.selectedUserId = id;
   }
 }
