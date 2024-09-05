@@ -10,5 +10,5 @@ let name = '';
   styleUrl: './tasks.component.scss'
 })
 export class TasksComponent {
-  @Input({required: true}) name!: string;
+  @Input() name?: string;
 }
