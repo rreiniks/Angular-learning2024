@@ -1,15 +1,9 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
-import { RouterOutlet } from '@angular/router';
-import { UserComponent } from './user/user.component';
-
 import { DUMMY_USERS } from './user/dummy-users';
-import { TasksComponent } from './tasks/tasks.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HeaderComponent, UserComponent, TasksComponent],
+  standalone: false,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
