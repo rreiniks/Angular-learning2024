@@ -1,14 +1,10 @@
-import { Component, EventEmitter, Input, Output, signal } from '@angular/core';
-import { HeaderComponent } from './header/header.component';
-import { UserInputComponent } from './user-input/user-input.component';
-import { InvestmentResultsComponent } from './investment-results/investment-results.component';
+import { Component, signal } from '@angular/core';
 import { Investment, YearReport } from './investment-input.model';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
+  standalone: false,
   templateUrl: './app.component.html',
-  imports: [HeaderComponent, UserInputComponent, InvestmentResultsComponent],
 })
 export class AppComponent {
   resultsData = signal<YearReport[] | undefined>(undefined);
