@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Investment, YearReport } from './investment.model';
+import { Investment, YearReport } from './investment-input.model';
 
 @Injectable({ providedIn: 'root' })
 export class InvestmentService {

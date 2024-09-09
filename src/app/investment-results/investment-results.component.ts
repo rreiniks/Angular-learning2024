@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { YearReport } from '../investment.model';
+import { YearReport } from '../investment-input.model';
 import { CurrencyPipe } from '@angular/common';
 
 @Component({
@@ -10,5 +10,5 @@ import { CurrencyPipe } from '@angular/common';
   styleUrl: './investment-results.component.css'
 })
 export class InvestmentResultsComponent {
-  @Input({required: true}) annualData!: YearReport[];
+  @Input() results?: YearReport[];
 }
