@@ -3,14 +3,10 @@ import { Investment, YearReport } from './investment-input.model';
 
 @Injectable({ providedIn: 'root' })
 export class InvestmentService {
-  private annualReport: YearReport[] = [];
+  public resultData?: YearReport[];
 
-  private calculateInvestmentResults(
-    initialInvestment: number,
-    duration: number,
-    expectedReturn: number,
-    annualInvestment: number
-  ) {
+  public calculateInvestmentResults(data: Investment) {
+    const { initialInvestment, annualInvestment, expectedReturn, duration } = data;
     const annualData = [];
     let investmentValue = initialInvestment;
 
@@ -30,19 +26,10 @@ export class InvestmentService {
       });
     }
 
-    return annualData;
-  }
-
-  inputInvestmentData(investment: Investment) {
-    return this.annualReport = this.calculateInvestmentResults(
-      investment.initialInvestment,
-      investment.duration,
-      investment.expectedReturn,
-      investment.annualInvestment
-    );
+    this.resultData = annualData;
   }
 
   public getInvestmentResults(){
-    return this.annualReport;
+    return this.resultData;
   }
 }
