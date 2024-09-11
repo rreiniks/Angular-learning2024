@@ -11,6 +11,8 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './new-ticket.component.css',
 })
 export class NewTicketComponent implements OnInit, AfterViewInit{
+  enteredTitle = "";
+  enteredText = "";
   /* @Output() add = new EventEmitter(); */
   add = output<{title: string, text: string}>();
   
@@ -26,8 +28,10 @@ export class NewTicketComponent implements OnInit, AfterViewInit{
     console.log(this.form().nativeElement);
   }
 
-  onSubmit(title: string, ticketText: string) {
-    this.add.emit({title: title, text: ticketText});
-    this.form().nativeElement.reset();
+  onSubmit() {
+    this.add.emit({title: this.enteredTitle, text: this.enteredText});
+    /* this.form().nativeElement.reset(); */
+    this.enteredText = '';
+    this.enteredTitle = '';
   }
 }
