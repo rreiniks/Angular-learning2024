@@ -1,5 +1,7 @@
 import {
   AfterContentInit,
+  afterNextRender,
+  afterRender,
   Component,
   contentChild,
   ContentChild,
@@ -26,6 +28,16 @@ import {
 export class ControlComponent implements AfterContentInit{
   ngAfterContentInit(): void {
     //...
+  }
+
+  constructor() {
+    afterRender(() => {
+      console.log('afterRender');
+    })
+
+    afterNextRender(() => {
+      console.log('afterNextRender');
+    })
   }
   /*  @HostBinding('class') className = 'control'; */
   /*   @HostListener('click') onClick() {
