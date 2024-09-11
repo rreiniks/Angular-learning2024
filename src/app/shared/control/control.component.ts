@@ -1,4 +1,5 @@
 import {
+  AfterContentInit,
   Component,
   contentChild,
   ContentChild,
@@ -22,7 +23,10 @@ import {
     '(click)': 'onClick()',
   },
 })
-export class ControlComponent {
+export class ControlComponent implements AfterContentInit{
+  ngAfterContentInit(): void {
+    //...
+  }
   /*  @HostBinding('class') className = 'control'; */
   /*   @HostListener('click') onClick() {
     console.log('Clicked');
