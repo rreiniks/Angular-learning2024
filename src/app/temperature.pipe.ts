@@ -31,11 +31,11 @@ export class TemperaturePipe implements PipeTransform {
     let symbol: '°C' | '°F';
 
     if (!outputType) {
-        symbol = inputType === 'cel' ? '°C' : '°F';
-    }else{
-        symbol = outputType === 'cel' ? '°C' : '°F';
+      symbol = inputType === 'cel' ? '°C' : '°F';
+    } else {
+      symbol = outputType === 'cel' ? '°C' : '°F';
     }
 
-    return `${outputTemp} ${symbol}`;
+    return `${outputTemp.toFixed(2)} ${symbol}`;
   }
 }
