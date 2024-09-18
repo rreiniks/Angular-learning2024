@@ -61,4 +61,6 @@ export class AvailablePlacesComponent implements OnInit {
       next: (resData) => console.log(resData)
     });
   }
+
+  
 }
