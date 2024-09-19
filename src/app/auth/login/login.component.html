@@ -31,7 +31,11 @@
     <button class="button">Login</button>
   </div>
 
-  @if (form.form.invalid && password.touched && email.touched){
-  <p class="control-error">Invalid values detected. Please check your input.</p>
+  @if ( email.dirty && email.invalid && email.touched){
+  <p class="control-error">Invalid email address entered.</p>
   }
+
+  @if ( password.dirty && password.invalid && password.touched){
+    <p class="control-error">Invalid password entered - must be at least 6 characters long.</p>
+    }
 </form>
