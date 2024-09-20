@@ -38,6 +38,8 @@ export class TasksService {
     if (tasks) {
       this.tasks.set(JSON.parse(tasks));
     }
+
+    console.log(this.tasks());
   }
 
   addTask(taskData: NewTaskData, userId: string) {
